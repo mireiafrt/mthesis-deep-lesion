@@ -1,7 +1,7 @@
 [project]
 name = "mthesis-deep-lesion"
 version = "0.1.0"
-description = "Mastet thesis using Deep Lesion dataset"
+description = "Master Thesis: Evaluating Medical AI Models Using Synthetic Data"
 authors = [
     {name = "mireiafrt",email = "mireiafl105@gmail.com"}
 ]
@@ -10,9 +10,16 @@ requires-python = ">=3.11"
 dependencies = [
     "pandas (>=2.2.3,<3.0.0)",
     "numpy (>=2.2.4,<3.0.0)",
+    "scikit-learn (>=1.6.1,<2.0.0)",
+    "matplotlib (>=3.10.1,<4.0.0)",
+    "seaborn (>=0.13.2,<0.14.0)",
+    "ipykernel (>=6.29.5,<7.0.0)",
+    "notebook (>=7.4.0,<8.0.0)",
     "tqdm (>=4.67.1,<5.0.0)"
 ]
 
+[tool.poetry]
+package-mode = false
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
