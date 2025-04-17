@@ -76,17 +76,17 @@ links = [
 ]
 
 # Download directory 
-dir_out = '/Volumes/MIREIA/MTHESIS - DEEPLESION/DATA/Images_zip'
+dir_out = '/Volumes/MIREIA/MTHESIS - DEEPLESION/DATA/Images_zip_2'
 if not os.path.exists(dir_out):
     os.mkdir(dir_out)
 
 # Download MD5 checksum file
 md5_link = 'https://nihcc.box.com/shared/static/q0f8gy79q2spw96hs6o4jjjfsrg17t55.txt'
-urllib.request.urlretrieve(md5_link, f'{dir_out}/MD5_checksums.txt')
+urllib.request.urlretrieve(md5_link, os.path.join(dir_out, 'MD5_checksums.txt'))
 
 # Download DeepLesion zip files
 for idx, link in enumerate(links):
-    fn = f'{dir_out}/Images_png_{idx+1:02d}.zip'
+    fn = os.path.join(dir_out, f'Images_png_{idx+1:02d}.zip')
     with DownloadProgressBar(unit='B', unit_scale=True, miniters=1, desc=f'Downloading: {fn}') as t:
         urllib.request.urlretrieve(link, fn, t.update_to)
 print('Download complete. Please check the MD5 checksums')
